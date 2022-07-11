@@ -20,3 +20,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Rust
         run: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs > rustup.sh && sh rustup.sh -y
+      - name: Add source
+        run: source $HOME/.cargo/env
+      - name: Install Tauri
+        run: cargo install tauri-cli --version "^1.0.0"
+      - name: Test
+        run: cargo tauri --help
+    
