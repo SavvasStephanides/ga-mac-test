@@ -19,4 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Echo
-        run: echo Hello
+        run: xcode-select --install
+      - name: Echo
+        run: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
